@@ -24,6 +24,7 @@
 		A548BA0C2C7512680042AA05 /* CreateThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA0B2C7512680042AA05 /* CreateThreadView.swift */; };
 		A548BA102C7512A20042AA05 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA0F2C7512A20042AA05 /* ActivityView.swift */; };
 		A548BA142C7512C50042AA05 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA132C7512C50042AA05 /* ProfileView.swift */; };
+		A548BA162C7515040042AA05 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA152C7515040042AA05 /* ThreadCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A548BA0B2C7512680042AA05 /* CreateThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadView.swift; sourceTree = "<group>"; };
 		A548BA0F2C7512A20042AA05 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		A548BA132C7512C50042AA05 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A548BA152C7515040042AA05 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				A548BA022C7511800042AA05 /* FeedView.swift */,
+				A548BA152C7515040042AA05 /* ThreadCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				A548B9FC2C7509B00042AA05 /* ButtonModifier.swift in Sources */,
 				A548B9F52C74F1130042AA05 /* LoginView.swift in Sources */,
 				A548B9FA2C7508620042AA05 /* TextFieldModifier.swift in Sources */,
+				A548BA162C7515040042AA05 /* ThreadCell.swift in Sources */,
 				A548B9C32C74F0190042AA05 /* ContentView.swift in Sources */,
 				A548B9FF2C750B300042AA05 /* MainTabView.swift in Sources */,
 				A548B9C12C74F0190042AA05 /* ThreadsCloneApp.swift in Sources */,

@@ -1,6 +1,9 @@
 {
   "images" : [
-
+    {
+      "filename" : "profile.jpg",
+      "idiom" : "universal"
+    }
   ],
   "info" : {
     "author" : "xcode",
