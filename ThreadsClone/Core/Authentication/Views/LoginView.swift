@@ -46,7 +46,7 @@ struct LoginView: View {
                         .fontWeight(.semibold)
                         .padding(.vertical)
                         .padding(.trailing, 28)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.primary)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 
@@ -56,9 +56,9 @@ struct LoginView: View {
                     Text("Login")
                         .font(.subheadline)
                         .fontWeight(.semibold)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(.systemBackground))
                         .frame(width: 352, height: 44)
-                        .background(.black)
+                        .background(Color.primary)
                         .cornerRadius(8)
                 }
                 
@@ -75,7 +75,7 @@ struct LoginView: View {
                         Text("Sign Up")
                             .fontWeight(.semibold)
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(Color.primary)
                     .font(.footnote)
                 }
                 .padding(.vertical, 16)
