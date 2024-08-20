@@ -1,6 +1,6 @@
 # Threads Clone App
 
-<img alt="Instagram Logo" src="https://upload.wikimedia.org/wikipedia/commons/d/db/Threads_%28app%29.png?20230704114028" width="60%">
+<img alt="Instagram Logo" src="https://upload.wikimedia.org/wikipedia/commons/d/db/Threads_%28app%29.png?20230704114028" width="40%">
 
 <div>
 <h4>Language options</h4>

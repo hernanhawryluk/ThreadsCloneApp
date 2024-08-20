@@ -11,11 +11,7 @@ struct ThreadCell: View {
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 12) {
-                Image("temp-profile-img")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                CircularProfileImageView()
                 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {

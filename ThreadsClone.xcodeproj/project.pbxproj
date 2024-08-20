@@ -27,6 +27,8 @@
 		A548BA162C7515040042AA05 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA152C7515040042AA05 /* ThreadCell.swift */; };
 		A548BA182C751DD50042AA05 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A548BA172C751DD50042AA05 /* README.md */; };
 		A548BA1A2C7520770042AA05 /* README.es.md in Resources */ = {isa = PBXBuildFile; fileRef = A548BA192C7520770042AA05 /* README.es.md */; };
+		A548BA1D2C7525B50042AA05 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA1C2C7525B50042AA05 /* CircularProfileImageView.swift */; };
+		A548BA1F2C7526DC0042AA05 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA1E2C7526DC0042AA05 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		A548BA152C7515040042AA05 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
 		A548BA172C751DD50042AA05 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A548BA192C7520770042AA05 /* README.es.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.es.md; sourceTree = "<group>"; };
+		A548BA1C2C7525B50042AA05 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		A548BA1E2C7526DC0042AA05 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 		A548B9EC2C74F0570042AA05 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A548BA1B2C7525860042AA05 /* Components */,
 				A548BA112C7512B30042AA05 /* Profile */,
 				A548BA0D2C7512880042AA05 /* Activity */,
 				A548BA082C75121A0042AA05 /* CreateThread */,
@@ -334,6 +339,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A548BA1B2C7525860042AA05 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A548BA1C2C7525B50042AA05 /* CircularProfileImageView.swift */,
+				A548BA1E2C7526DC0042AA05 /* UserCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -473,6 +487,8 @@
 				A548BA142C7512C50042AA05 /* ProfileView.swift in Sources */,
 				A548B9FC2C7509B00042AA05 /* ButtonModifier.swift in Sources */,
 				A548B9F52C74F1130042AA05 /* LoginView.swift in Sources */,
+				A548BA1D2C7525B50042AA05 /* CircularProfileImageView.swift in Sources */,
+				A548BA1F2C7526DC0042AA05 /* UserCell.swift in Sources */,
 				A548B9FA2C7508620042AA05 /* TextFieldModifier.swift in Sources */,
 				A548BA162C7515040042AA05 /* ThreadCell.swift in Sources */,
 				A548B9C32C74F0190042AA05 /* ContentView.swift in Sources */,
