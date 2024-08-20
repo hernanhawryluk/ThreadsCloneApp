@@ -25,6 +25,8 @@
 		A548BA102C7512A20042AA05 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA0F2C7512A20042AA05 /* ActivityView.swift */; };
 		A548BA142C7512C50042AA05 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA132C7512C50042AA05 /* ProfileView.swift */; };
 		A548BA162C7515040042AA05 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BA152C7515040042AA05 /* ThreadCell.swift */; };
+		A548BA182C751DD50042AA05 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A548BA172C751DD50042AA05 /* README.md */; };
+		A548BA1A2C7520770042AA05 /* README.es.md in Resources */ = {isa = PBXBuildFile; fileRef = A548BA192C7520770042AA05 /* README.es.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		A548BA0F2C7512A20042AA05 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		A548BA132C7512C50042AA05 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A548BA152C7515040042AA05 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
+		A548BA172C751DD50042AA05 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A548BA192C7520770042AA05 /* README.es.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.es.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 		A548B9B42C74F0190042AA05 = {
 			isa = PBXGroup;
 			children = (
+				A548BA192C7520770042AA05 /* README.es.md */,
+				A548BA172C751DD50042AA05 /* README.md */,
 				A548B9BF2C74F0190042AA05 /* ThreadsClone */,
 				A548B9D02C74F01A0042AA05 /* ThreadsCloneTests */,
 				A548B9DA2C74F01A0042AA05 /* ThreadsCloneUITests */,
@@ -432,8 +438,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A548BA182C751DD50042AA05 /* README.md in Resources */,
 				A548B9C82C74F01A0042AA05 /* Preview Assets.xcassets in Resources */,
 				A548B9C52C74F01A0042AA05 /* Assets.xcassets in Resources */,
+				A548BA1A2C7520770042AA05 /* README.es.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
