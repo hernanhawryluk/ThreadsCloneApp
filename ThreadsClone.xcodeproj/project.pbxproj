@@ -14,6 +14,7 @@
 		A548B9D22C74F01A0042AA05 /* ThreadsCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548B9D12C74F01A0042AA05 /* ThreadsCloneTests.swift */; };
 		A548B9DC2C74F01A0042AA05 /* ThreadsCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548B9DB2C74F01A0042AA05 /* ThreadsCloneUITests.swift */; };
 		A548B9DE2C74F01A0042AA05 /* ThreadsCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548B9DD2C74F01A0042AA05 /* ThreadsCloneUITestsLaunchTests.swift */; };
+		A548B9F52C74F1130042AA05 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548B9F42C74F1130042AA05 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A548B9D72C74F01A0042AA05 /* ThreadsCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreadsCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A548B9DB2C74F01A0042AA05 /* ThreadsCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsCloneUITests.swift; sourceTree = "<group>"; };
 		A548B9DD2C74F01A0042AA05 /* ThreadsCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A548B9F42C74F1130042AA05 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,12 @@
 		A548B9BF2C74F0190042AA05 /* ThreadsClone */ = {
 			isa = PBXGroup;
 			children = (
-				A548B9C02C74F0190042AA05 /* ThreadsCloneApp.swift */,
-				A548B9C22C74F0190042AA05 /* ContentView.swift */,
+				A548B9F02C74F0630042AA05 /* Utils */,
+				A548B9EF2C74F05F0042AA05 /* Services */,
+				A548B9EE2C74F05D0042AA05 /* Model */,
+				A548B9ED2C74F05A0042AA05 /* Extensions */,
+				A548B9EC2C74F0570042AA05 /* Core */,
+				A548B9EB2C74F04D0042AA05 /* App */,
 				A548B9C42C74F01A0042AA05 /* Assets.xcassets */,
 				A548B9C62C74F01A0042AA05 /* Preview Content */,
 			);
@@ -125,6 +131,75 @@
 				A548B9DD2C74F01A0042AA05 /* ThreadsCloneUITestsLaunchTests.swift */,
 			);
 			path = ThreadsCloneUITests;
+			sourceTree = "<group>";
+		};
+		A548B9EB2C74F04D0042AA05 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A548B9C02C74F0190042AA05 /* ThreadsCloneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A548B9EC2C74F0570042AA05 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A548B9F22C74F0C00042AA05 /* Root */,
+				A548B9F12C74F0AE0042AA05 /* Authentication */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A548B9ED2C74F05A0042AA05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A548B9EE2C74F05D0042AA05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A548B9EF2C74F05F0042AA05 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A548B9F02C74F0630042AA05 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A548B9F12C74F0AE0042AA05 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A548B9F32C74F0E10042AA05 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A548B9F22C74F0C00042AA05 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				A548B9C22C74F0190042AA05 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		A548B9F32C74F0E10042AA05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A548B9F42C74F1130042AA05 /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A548B9F52C74F1130042AA05 /* LoginView.swift in Sources */,
 				A548B9C32C74F0190042AA05 /* ContentView.swift in Sources */,
 				A548B9C12C74F0190042AA05 /* ThreadsCloneApp.swift in Sources */,
 			);
