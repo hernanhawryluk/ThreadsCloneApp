@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var fullname: String = ""
-    @State private var username: String = ""
+    @StateObject var viewModel = RegistrationViewModel()
     @Environment(\.dismiss) var dismiss
+    @State private var loader: Bool = false
+    
     var body: some View {
         VStack {
             Spacer ()
@@ -24,25 +23,35 @@ struct RegistrationView: View {
                 .padding()
             
             VStack {
-                TextField("Enter your email:", text: $email)
+                TextField("Enter your email:", text: $viewModel.email)
                     .autocapitalization(.none)
                     .modifier(TextFieldModifier())
                 
-                SecureField("Enter your password", text: $password)
+                SecureField("Enter your password", text: $viewModel.password)
                     .modifier(TextFieldModifier())
                 
-                TextField("Enter your full name:", text: $fullname)
+                TextField("Enter your full name:", text: $viewModel.fullname)
                     .modifier(TextFieldModifier())
                 
-                TextField("Enter your username:", text: $username)
+                TextField("Enter your username:", text: $viewModel.username)
+                    .autocapitalization(.none)
                     .modifier(TextFieldModifier())
+                    
             }
             
             Button {
-                
+                Task {
+                    loader = true
+                    try await viewModel.createUser()
+                    loader = false
+                }
             } label: {
-                Text("Sign Up")
-                    .modifier(ButtonModifier())
+                if (!loader){
+                    Text("Sign Up")
+                        .modifier(ButtonModifier())
+                } else {
+                    ProgressView()
+                }
             }
             .padding(.vertical)
             Spacer()
