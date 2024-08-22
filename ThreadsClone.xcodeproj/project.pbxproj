@@ -39,6 +39,7 @@
 		A562AA242C767FD6007D70BF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562AA232C767FD6007D70BF /* AuthService.swift */; };
 		A562AA282C768CB5007D70BF /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562AA272C768CB5007D70BF /* ContentViewModel.swift */; };
 		A562AA2A2C7699FF007D70BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A562AA292C7699FF007D70BF /* .gitignore */; };
+		A58A1EC42C77B83D006A5564 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1EC32C77B83D006A5564 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		A562AA232C767FD6007D70BF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A562AA272C768CB5007D70BF /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		A562AA292C7699FF007D70BF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A58A1EC32C77B83D006A5564 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,14 +126,13 @@
 		A548B9B42C74F0190042AA05 = {
 			isa = PBXGroup;
 			children = (
-				A562AA292C7699FF007D70BF /* .gitignore */,
-				A562AA152C767891007D70BF /* GoogleService-Info.plist */,
-				A548BA192C7520770042AA05 /* README.es.md */,
-				A548BA172C751DD50042AA05 /* README.md */,
 				A548B9BF2C74F0190042AA05 /* ThreadsClone */,
 				A548B9D02C74F01A0042AA05 /* ThreadsCloneTests */,
 				A548B9DA2C74F01A0042AA05 /* ThreadsCloneUITests */,
-				A548B9BE2C74F0190042AA05 /* Products */,
+				A562AA152C767891007D70BF /* GoogleService-Info.plist */,
+				A562AA292C7699FF007D70BF /* .gitignore */,
+				A548BA192C7520770042AA05 /* README.es.md */,
+				A548BA172C751DD50042AA05 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +144,7 @@
 				A548B9D72C74F01A0042AA05 /* ThreadsCloneUITests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A548B9BF2C74F0190042AA05 /* ThreadsClone */ = {
@@ -179,6 +181,7 @@
 		A548B9DA2C74F01A0042AA05 /* ThreadsCloneUITests */ = {
 			isa = PBXGroup;
 			children = (
+				A548B9BE2C74F0190042AA05 /* Products */,
 				A548B9DB2C74F01A0042AA05 /* ThreadsCloneUITests.swift */,
 				A548B9DD2C74F01A0042AA05 /* ThreadsCloneUITestsLaunchTests.swift */,
 			);
@@ -403,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				A562AA202C767EAC007D70BF /* RegistrationViewModel.swift */,
+				A58A1EC32C77B83D006A5564 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -593,6 +597,7 @@
 				A548B9FF2C750B300042AA05 /* MainTabView.swift in Sources */,
 				A548B9C12C74F0190042AA05 /* ThreadsCloneApp.swift in Sources */,
 				A548B9F72C7506280042AA05 /* RegistrationView.swift in Sources */,
+				A58A1EC42C77B83D006A5564 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
