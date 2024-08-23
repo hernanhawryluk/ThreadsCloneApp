@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct EditProfileView: View {
+    let user: User
+    
     @State private var bio: String = ""
     @State private var link: String = ""
     @State private var isPrivateProfile: Bool = false
+    @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = EditProfileViewModel()
     
     var body: some View {
         
@@ -30,7 +35,20 @@ struct EditProfileView: View {
                         
                         Spacer()
                         
-                        CircularProfileImageView()
+                        PhotosPicker(selection: $viewModel.selectedItem) {
+                            if let image = viewModel.profileImage {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                CircularProfileImageView(user: user, size: .small)
+                            }
+                        }
+                        .onAppear {
+                            requestPhotoLibraryAccess()
+                        }
                     }
                     
                     Divider()
@@ -98,7 +116,7 @@ struct EditProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
-                        
+                        dismiss()
                     }
                     .font(.subheadline)
                     .foregroundColor(.primary)
@@ -106,7 +124,10 @@ struct EditProfileView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") {
-                        
+                        Task {
+                            try await viewModel.updateUserData()
+                            dismiss()
+                        }
                     }
                     .font(.subheadline)
                     .fontWeight(.semibold)
@@ -115,8 +136,23 @@ struct EditProfileView: View {
             }
         }
     }
+    
+    private func requestPhotoLibraryAccess() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        if status == .notDetermined {
+            PHPhotoLibrary.requestAuthorization { newStatus in
+                if newStatus == .authorized {
+                    print("Access granted")
+                } else {
+                    print("Access denied")
+                }
+            }
+        }
+    }
 }
 
-#Preview {
-    EditProfileView()
+struct EditProfileView_Preview: PreviewProvider {
+    static var previews: some View {
+        EditProfileView(user: dev.user)
+    }
 }

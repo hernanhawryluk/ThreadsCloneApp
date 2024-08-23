@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     @StateObject var viewModel = CurrentUserProfileViewModel()
+    @State private var showEditProfile: Bool = false
     
     private var currentUser: User? {
         return viewModel.currentUser
@@ -21,16 +22,29 @@ struct CurrentUserProfileView: View {
                     
                     ProfileHeaderView(user: currentUser)
                     
-                    Button {
+                    HStack{
+                        Button {
+                            showEditProfile.toggle()
+                        } label: {
+                            Text("Edit profile")
+                                .modifier(SmallButtonModifier())
+                        }
                         
-                    } label: {
-                        Text("Edit Profile")
-                            .modifier(SmallButtonModifier())
+                        ShareLink(item: URL(string: "https://hernan-hawryluk.vercel.app")!) {
+                            Text("Share profile")
+                                .modifier(SmallButtonModifier())
+                        }
+                        
                     }
                     
                     UserContentView()
                 }
             }
+            .sheet(isPresented: $showEditProfile, content: {
+                if let user = currentUser {
+                    EditProfileView(user: user)
+                }
+            })
             .padding(.horizontal)
             .padding(.top)
             .toolbar {
