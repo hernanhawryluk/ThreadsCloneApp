@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct UserContentView: View {
+    @StateObject var viewModel: UserContentListViewModel
     @State private var selectedFilter: ProfileThreadFilter = .threads
     @Namespace private var animation
+    
+    init(user: User) {
+        self._viewModel = StateObject(wrappedValue: UserContentListViewModel(user: user))
+    }
     
     var body: some View {
         VStack {
@@ -41,7 +46,7 @@ struct UserContentView: View {
         }
         LazyVStack {
             ForEach(0...10, id: \.self) { thread in
-                    ThreadCell()
+//                    ThreadCell(thread: thread)
             }
         }
 
