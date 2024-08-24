@@ -7,75 +7,57 @@
 
 import SwiftUI
 
-struct ThreadCell: View {
+struct ThreadItemView: View {
     let thread: Thread
     
     var body: some View {
-        VStack {
-            HStack(alignment: .top, spacing: 12) {
-                CircularProfileImageView(user: thread.user, size: .small)
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack {
-                        Text(thread.user?.username ?? "")
+        NavigationStack {
+            VStack {
+                HStack(alignment: .top, spacing: 12) {
+                    CircularProfileImageView(user: thread.user, size: .small)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack {
+                            
+                            if let user = thread.user{
+                                NavigationLink(destination: ProfileView(user: user)) {
+                                    Text(thread.user?.username ?? "")
+                                        .font(.footnote)
+                                        .fontWeight(.semibold)
+                                }
+                            }
+                            
+                            Spacer()
+                            
+                            Text(thread.timestamp.timestampString())
+                                .font(.caption)
+                                .foregroundColor(Color(.systemGray))
+                            
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "ellipsis")
+                                    .foregroundColor(Color(.darkGray))
+                            }
+                        }
+                        
+                        Text(thread.caption)
                             .font(.footnote)
-                        .fontWeight(.semibold)
+                            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                         
-                        Spacer()
-                        
-                        Text(thread.timestamp.timestampString())
-                            .font(.caption)
-                            .foregroundColor(Color(.systemGray))
-                        
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "ellipsis")
-                                .foregroundColor(Color(.darkGray))
-                        }
+                        ThreadItemButtonsView(thread: thread)
                     }
-                    
-                    Text(thread.caption)
-                        .font(.footnote)
-                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-                    
-                    HStack(spacing: 16) {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "heart")
-                        }
-                        
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "bubble.right")
-                        }
-                        
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "arrow.rectanglepath")
-                        }
-                        
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "paperplane")
-                        }
-                    }
-                    .foregroundColor(Color.primary)
-                    .padding(.vertical, 8)
                 }
+                Divider()
             }
-            Divider()
+            .padding()
         }
-        .padding()
+        
     }
 }
 
 struct ThreadCell_Preview: PreviewProvider {
     static var previews: some View {
-        ThreadCell(thread: dev.thread)
+        ThreadItemView(thread: dev.thread)
     }
 }

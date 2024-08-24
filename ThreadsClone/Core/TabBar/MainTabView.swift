@@ -12,6 +12,8 @@ struct MainTabView: View {
     @State private var lastSelectedTab: Int = 0
     @State private var showCreateThreadView: Bool = false
     
+    @StateObject private var feedViewModel = FeedViewModel()
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             FeedView()
@@ -66,6 +68,7 @@ struct MainTabView: View {
                 }
                 .tag(4)
         }
+        .environmentObject(feedViewModel)
         .tint(Color.primary)
         .sheet(isPresented: $showCreateThreadView, onDismiss: {
             selectedTab = lastSelectedTab

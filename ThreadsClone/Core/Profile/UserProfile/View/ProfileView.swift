@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     let user: User
     
+    @Environment(\.dismiss) var dismiss
+    
     @State private var selectedFilter: ProfileThreadFilter = .threads
     @Namespace private var animation
     
@@ -26,10 +28,23 @@ struct ProfileView: View {
                         .modifier(ButtonModifier())
                 }
                 
-                UserContentView()
+                UserContentListView(user: user)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                }
+            }
+        }
         .padding(.horizontal)
     }
 }

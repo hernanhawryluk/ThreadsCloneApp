@@ -5,14 +5,14 @@
 //  Created by Hernan Hawryluk on 24/08/2024.
 //
 
-import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
-struct CreateThreadViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class CreateThreadViewModel: ObservableObject {
+    
+    func uploadThread(caption: String) async throws {
+        guard let uid: String = Auth.auth().currentUser?.uid else { return }
+        let thread = Thread(ownerUid: uid, caption: caption, timestamp: Timestamp(), likes: 0)
+        try await ThreadService.uploadThread(thread)
     }
-}
-
-#Preview {
-    CreateThreadViewModel()
 }
