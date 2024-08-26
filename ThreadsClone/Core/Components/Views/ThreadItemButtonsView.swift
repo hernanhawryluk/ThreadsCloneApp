@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ThreadItemButtonsView: View {
-    var thread: Thread
+    let thread: Thread
 
+    @State private var showReplySheet: Bool = false
     @EnvironmentObject var viewModel: FeedViewModel
     
     var body: some View {
@@ -34,9 +35,16 @@ struct ThreadItemButtonsView: View {
             }
             
             Button {
-                
+                showReplySheet.toggle()
             } label: {
-                Image(systemName: "bubble.right")
+                HStack {
+                    Image(systemName: "bubble.right")
+                    if thread.replies > 0 {
+                        Text("\(thread.replies)")
+                            .font(.footnote)
+                            .animation(.easeInOut, value: thread.replies)
+                    }
+                }
             }
             
             Button {
@@ -54,6 +62,9 @@ struct ThreadItemButtonsView: View {
         }
         .foregroundColor(Color.primary)
         .padding(.vertical, 8)
+        .sheet(isPresented: $showReplySheet, content: {
+            FeedReplyView(thread: thread)
+        })
     }
 }
 

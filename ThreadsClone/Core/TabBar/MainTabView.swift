@@ -10,9 +10,11 @@ import SwiftUI
 struct MainTabView: View {
     @State private var selectedTab = 0
     @State private var lastSelectedTab: Int = 0
-    @State private var showCreateThreadView: Bool = false
     
+    @StateObject private var createThreadSheetManager = CreateThreadSheetManager()
     @StateObject private var feedViewModel = FeedViewModel()
+    @StateObject private var currentUserProfileViewModel = CurrentUserProfileViewModel()
+    @StateObject private var toastViewModel = ToastViewModel()
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -42,7 +44,7 @@ struct MainTabView: View {
                 }
                 .onAppear {
                     selectedTab = lastSelectedTab
-                    showCreateThreadView = true
+                    createThreadSheetManager.show = true
                 }
                 .tag(2)
             ActivityView()
@@ -68,13 +70,23 @@ struct MainTabView: View {
                 }
                 .tag(4)
         }
+        .environmentObject(createThreadSheetManager)
         .environmentObject(feedViewModel)
+        .environmentObject(currentUserProfileViewModel)
+        .environmentObject(toastViewModel)
         .tint(Color.primary)
-        .sheet(isPresented: $showCreateThreadView, onDismiss: {
+        .sheet(isPresented: $createThreadSheetManager.show, onDismiss: {
             selectedTab = lastSelectedTab
         }, content: {
             CreateThreadView()
         })
+        .overlay(
+            withAnimation{
+                ToastView(show: toastViewModel.show, message: toastViewModel.message, status: toastViewModel.status)
+            }
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .animation(.spring(), value: toastViewModel.show)
+        )
     }
 }
 

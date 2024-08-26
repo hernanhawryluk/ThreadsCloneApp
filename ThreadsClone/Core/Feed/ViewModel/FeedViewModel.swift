@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import Firebase
 
 class FeedViewModel: ObservableObject {
     @Published public var threads = [Thread]()
+    @Published public var lastDocument: DocumentSnapshot?
+    @Published public var loading = false
     
     init() {
         Task {
@@ -18,18 +21,38 @@ class FeedViewModel: ObservableObject {
     
     @MainActor
     func fetchThreads() async throws {
-        try await self.threads = ThreadService.fetchThreads()
+        self.loading = true
+        self.threads = []
+        self.lastDocument = nil
+        let (threads, lastDocument) = try await ThreadService.fetchThreads(limit: 20)
+        self.threads = threads
+        self.lastDocument = lastDocument
         try await fetchUserDataForThreads()
+        self.loading = false
+    }
+    
+    @MainActor
+    func fetchMoreThreads() async throws {
+        self.loading = true
+        let (threads, lastDocument) = try await ThreadService.fetchThreads(limit: 20, afterDocument: self.lastDocument)
+        if threads.count > 0 {
+            self.threads.append(contentsOf: threads)
+            self.lastDocument = lastDocument
+            try await fetchUserDataForThreads()
+        }
+        self.loading = false
     }
     
     @MainActor
     private func fetchUserDataForThreads() async throws {
         for i in 0 ..< threads.count {
-            let thread = threads[i]
-            let ownerUid = thread.ownerUid
-            let threadUser = try await UserService.fetchUser(withUid: ownerUid)
-            
-            threads[i].user = threadUser
+            if threads[i].user == nil {
+                let thread = threads[i]
+                let ownerUid = thread.ownerUid
+                let threadUser = try await UserService.fetchUser(withUid: ownerUid)
+                
+                threads[i].user = threadUser
+            }
         }
     }
     

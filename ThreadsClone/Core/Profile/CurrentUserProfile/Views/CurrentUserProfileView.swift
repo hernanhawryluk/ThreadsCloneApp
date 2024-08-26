@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
-    @StateObject var viewModel = CurrentUserProfileViewModel()
+    @EnvironmentObject var viewModel :  CurrentUserProfileViewModel
     @State private var showEditProfile: Bool = false
     
     private var currentUser: User? {

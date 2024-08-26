@@ -15,6 +15,7 @@ struct Thread: Identifiable, Codable {
     let caption: String
     let timestamp: Timestamp
     var likes: Int
+    var replies: Int
     
     var id: String {
         return threadId ?? NSUUID().uuidString
@@ -22,4 +23,5 @@ struct Thread: Identifiable, Codable {
     
     var user: User?
     var currentUserHasLiked: Bool?
+   
 }

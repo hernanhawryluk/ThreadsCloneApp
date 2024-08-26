@@ -10,6 +10,12 @@ import SwiftUI
 struct ThreadItemView: View {
     let thread: Thread
     
+    @EnvironmentObject var currentUserProfileViewModel: CurrentUserProfileViewModel
+    
+    private var currentUser: User? {
+        return currentUserProfileViewModel.currentUser
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -20,7 +26,13 @@ struct ThreadItemView: View {
                         HStack {
                             
                             if let user = thread.user{
-                                NavigationLink(destination: ProfileView(user: user)) {
+                                NavigationLink(destination: Group {
+                                    if currentUser == user {
+                                        CurrentUserProfileView()
+                                    } else {
+                                        ProfileView(user: user)
+                                    }
+                                }) {
                                     Text(thread.user?.username ?? "")
                                         .font(.footnote)
                                         .fontWeight(.semibold)
@@ -29,9 +41,11 @@ struct ThreadItemView: View {
                             
                             Spacer()
                             
+                            
                             Text(thread.timestamp.timestampString())
                                 .font(.caption)
                                 .foregroundColor(Color(.systemGray))
+                            
                             
                             Button {
                                 
@@ -41,22 +55,24 @@ struct ThreadItemView: View {
                             }
                         }
                         
-                        Text(thread.caption)
-                            .font(.footnote)
-                            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                        NavigationLink(destination: FeedDetailView(thread: thread)) {
+                            Text(thread.caption)
+                                .font(.footnote)
+                                .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                        }
                         
                         ThreadItemButtonsView(thread: thread)
                     }
                 }
                 Divider()
             }
-            .padding()
+            .padding(.top)
         }
         
     }
 }
 
-struct ThreadCell_Preview: PreviewProvider {
+struct ThreadItemView_Preview: PreviewProvider {
     static var previews: some View {
         ThreadItemView(thread: dev.thread)
     }

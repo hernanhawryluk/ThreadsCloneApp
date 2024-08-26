@@ -61,6 +61,18 @@
 		A58A1EF92C7A4976006A5564 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1EF82C7A4976006A5564 /* Like.swift */; };
 		A58A1EFB2C7A4A88006A5564 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1EFA2C7A4A88006A5564 /* LikeService.swift */; };
 		A58A1F012C7A5362006A5564 /* ThreadItemButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1F002C7A5362006A5564 /* ThreadItemButtonsView.swift */; };
+		A58A1F052C7B99E7006A5564 /* FeedReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1F042C7B99E7006A5564 /* FeedReplyView.swift */; };
+		A58A1F092C7BACA7006A5564 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1F082C7BACA7006A5564 /* UserViewModel.swift */; };
+		A58A1F0B2C7BB66C006A5564 /* ThreadAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1F0A2C7BB66C006A5564 /* ThreadAttachments.swift */; };
+		A58A1F0D2C7BC0A7006A5564 /* FeedReplyThreadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1F0C2C7BC0A7006A5564 /* FeedReplyThreadModel.swift */; };
+		A58A1F0F2C7BC1BD006A5564 /* ReplyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1F0E2C7BC1BD006A5564 /* ReplyService.swift */; };
+		A58A1F112C7BC2DA006A5564 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1F102C7BC2DA006A5564 /* Reply.swift */; };
+		A58A1F132C7BC7FD006A5564 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A1F122C7BC7FD006A5564 /* ToastView.swift */; };
+		A5D5D54F2C7CC5A7000DF90C /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D54E2C7CC5A7000DF90C /* FeedDetailView.swift */; };
+		A5D5D5512C7CC87D000DF90C /* FeedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D5502C7CC87D000DF90C /* FeedDetailViewModel.swift */; };
+		A5D5D5542C7CCF73000DF90C /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D5532C7CCF73000DF90C /* ToastViewModel.swift */; };
+		A5D5D5562C7CE16F000DF90C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D5552C7CE16F000DF90C /* View.swift */; };
+		A5D5D5582C7D0C29000DF90C /* CreateThreadSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D5572C7D0C29000DF90C /* CreateThreadSheetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +146,18 @@
 		A58A1EF82C7A4976006A5564 /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		A58A1EFA2C7A4A88006A5564 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
 		A58A1F002C7A5362006A5564 /* ThreadItemButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadItemButtonsView.swift; sourceTree = "<group>"; };
+		A58A1F042C7B99E7006A5564 /* FeedReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedReplyView.swift; sourceTree = "<group>"; };
+		A58A1F082C7BACA7006A5564 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		A58A1F0A2C7BB66C006A5564 /* ThreadAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadAttachments.swift; sourceTree = "<group>"; };
+		A58A1F0C2C7BC0A7006A5564 /* FeedReplyThreadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedReplyThreadModel.swift; sourceTree = "<group>"; };
+		A58A1F0E2C7BC1BD006A5564 /* ReplyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyService.swift; sourceTree = "<group>"; };
+		A58A1F102C7BC2DA006A5564 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+		A58A1F122C7BC7FD006A5564 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		A5D5D54E2C7CC5A7000DF90C /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
+		A5D5D5502C7CC87D000DF90C /* FeedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewModel.swift; sourceTree = "<group>"; };
+		A5D5D5532C7CCF73000DF90C /* ToastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
+		A5D5D5552C7CE16F000DF90C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		A5D5D5572C7D0C29000DF90C /* CreateThreadSheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadSheetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +282,7 @@
 			children = (
 				A58A1ECF2C77D624006A5564 /* PreviewProvider.swift */,
 				A58A1EF62C7A36A1006A5564 /* Timestamp.swift */,
+				A5D5D5552C7CE16F000DF90C /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +293,7 @@
 				A58A1EC52C77BD28006A5564 /* User.swift */,
 				A58A1EE72C7A1D72006A5564 /* Thread.swift */,
 				A58A1EF82C7A4976006A5564 /* Like.swift */,
+				A58A1F102C7BC2DA006A5564 /* Reply.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,6 +305,7 @@
 				A58A1EE22C78DF8B006A5564 /* ImageUploader.swift */,
 				A58A1EEC2C7A1F00006A5564 /* ThreadService.swift */,
 				A58A1EFA2C7A4A88006A5564 /* LikeService.swift */,
+				A58A1F0E2C7BC1BD006A5564 /* ReplyService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -305,7 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				A562AA262C768C95007D70BF /* ViewModel */,
-				A562AA252C768C7E007D70BF /* View */,
+				A562AA252C768C7E007D70BF /* Views */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -332,7 +359,10 @@
 		A548B9FD2C750ADF0042AA05 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				A5D5D5522C7CCF5C000DF90C /* ViewModels */,
+				A58A1F122C7BC7FD006A5564 /* ToastView.swift */,
 				A548B9FE2C750B300042AA05 /* MainTabView.swift */,
+				A58A1F082C7BACA7006A5564 /* UserViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -350,6 +380,8 @@
 			isa = PBXGroup;
 			children = (
 				A548BA022C7511800042AA05 /* FeedView.swift */,
+				A58A1F042C7B99E7006A5564 /* FeedReplyView.swift */,
+				A5D5D54E2C7CC5A7000DF90C /* FeedDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,7 +441,6 @@
 			children = (
 				A58A1ED62C77E15D006A5564 /* Components */,
 				A58A1ED12C77DD12006A5564 /* CurrentUserProfile */,
-				A58A1EC92C77C248006A5564 /* ViewModel */,
 				A562AA112C763E1D007D70BF /* EditProfile */,
 				A548BA202C752AC80042AA05 /* Models */,
 				A548BA122C7512B90042AA05 /* UserProfile */,
@@ -475,25 +506,18 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		A562AA252C768C7E007D70BF /* View */ = {
+		A562AA252C768C7E007D70BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A548B9C22C74F0190042AA05 /* ContentView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A562AA262C768C95007D70BF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				A562AA272C768CB5007D70BF /* ContentViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A58A1EC92C77C248006A5564 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -560,6 +584,7 @@
 			isa = PBXGroup;
 			children = (
 				A58A1EEA2C7A1EBC006A5564 /* CreateThreadViewModel.swift */,
+				A5D5D5572C7D0C29000DF90C /* CreateThreadSheetManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -568,6 +593,8 @@
 			isa = PBXGroup;
 			children = (
 				A58A1EF02C7A25F6006A5564 /* FeedViewModel.swift */,
+				A58A1F0C2C7BC0A7006A5564 /* FeedReplyThreadModel.swift */,
+				A5D5D5502C7CC87D000DF90C /* FeedDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -596,8 +623,17 @@
 				A548BA1C2C7525B50042AA05 /* CircularProfileImageView.swift */,
 				A548BA1E2C7526DC0042AA05 /* UserCell.swift */,
 				A58A1F002C7A5362006A5564 /* ThreadItemButtonsView.swift */,
+				A58A1F0A2C7BB66C006A5564 /* ThreadAttachments.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A5D5D5522C7CCF5C000DF90C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A5D5D5532C7CCF73000DF90C /* ToastViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -744,12 +780,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D5D5562C7CE16F000DF90C /* View.swift in Sources */,
+				A5D5D5582C7D0C29000DF90C /* CreateThreadSheetManager.swift in Sources */,
 				A548BA102C7512A20042AA05 /* ActivityView.swift in Sources */,
 				A562AA212C767EAC007D70BF /* RegistrationViewModel.swift in Sources */,
 				A562AA142C763E38007D70BF /* EditProfileView.swift in Sources */,
 				A58A1EF52C7A3150006A5564 /* UserContentListViewModel.swift in Sources */,
+				A58A1F0F2C7BC1BD006A5564 /* ReplyService.swift in Sources */,
 				A548BA0C2C7512680042AA05 /* CreateThreadView.swift in Sources */,
 				A562AA282C768CB5007D70BF /* ContentViewModel.swift in Sources */,
+				A58A1F112C7BC2DA006A5564 /* Reply.swift in Sources */,
 				A548BA032C7511800042AA05 /* FeedView.swift in Sources */,
 				A58A1ECB2C77C263006A5564 /* CurrentUserProfileViewModel.swift in Sources */,
 				A548BA222C752ADF0042AA05 /* ProfileThreadFilter.swift in Sources */,
@@ -758,6 +798,8 @@
 				A58A1EC82C77C0B3006A5564 /* UserService.swift in Sources */,
 				A562AA242C767FD6007D70BF /* AuthService.swift in Sources */,
 				A58A1ED92C77E18C006A5564 /* ProfileHeaderView.swift in Sources */,
+				A58A1F132C7BC7FD006A5564 /* ToastView.swift in Sources */,
+				A58A1F0B2C7BB66C006A5564 /* ThreadAttachments.swift in Sources */,
 				A548BA072C7511D90042AA05 /* ExploreView.swift in Sources */,
 				A58A1EE82C7A1D72006A5564 /* Thread.swift in Sources */,
 				A58A1EE32C78DF8B006A5564 /* ImageUploader.swift in Sources */,
@@ -767,6 +809,7 @@
 				A548B9FC2C7509B00042AA05 /* ButtonModifier.swift in Sources */,
 				A58A1EDD2C77E759006A5564 /* SmallButtonModifier.swift in Sources */,
 				A548B9F52C74F1130042AA05 /* LoginView.swift in Sources */,
+				A58A1F052C7B99E7006A5564 /* FeedReplyView.swift in Sources */,
 				A548BA1D2C7525B50042AA05 /* CircularProfileImageView.swift in Sources */,
 				A58A1EF72C7A36A1006A5564 /* Timestamp.swift in Sources */,
 				A548BA1F2C7526DC0042AA05 /* UserCell.swift in Sources */,
@@ -780,11 +823,16 @@
 				A548B9FF2C750B300042AA05 /* MainTabView.swift in Sources */,
 				A58A1ECE2C77D0F9006A5564 /* ExploreViewModel.swift in Sources */,
 				A548B9C12C74F0190042AA05 /* ThreadsCloneApp.swift in Sources */,
+				A5D5D5512C7CC87D000DF90C /* FeedDetailViewModel.swift in Sources */,
+				A58A1F092C7BACA7006A5564 /* UserViewModel.swift in Sources */,
+				A5D5D5542C7CCF73000DF90C /* ToastViewModel.swift in Sources */,
 				A58A1F012C7A5362006A5564 /* ThreadItemButtonsView.swift in Sources */,
 				A548B9F72C7506280042AA05 /* RegistrationView.swift in Sources */,
 				A58A1EC42C77B83D006A5564 /* LoginViewModel.swift in Sources */,
 				A58A1EDB2C77E4FA006A5564 /* UserContentListView.swift in Sources */,
+				A58A1F0D2C7BC0A7006A5564 /* FeedReplyThreadModel.swift in Sources */,
 				A58A1ED02C77D624006A5564 /* PreviewProvider.swift in Sources */,
+				A5D5D54F2C7CC5A7000DF90C /* FeedDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,6 +993,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ThreadsClone/Preview Content\"";
@@ -975,6 +1024,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ThreadsClone/Preview Content\"";
