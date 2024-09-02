@@ -23,6 +23,9 @@ struct ThreadItemButtonsView: View {
                 HStack{
                     
                     Image(systemName: thread.currentUserHasLiked == true ? "heart.fill" : "heart")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 16)
                         .foregroundColor(thread.currentUserHasLiked == true ? .red : .primary)
                         .animation(.easeInOut, value: thread.currentUserHasLiked)
                     
@@ -31,7 +34,7 @@ struct ThreadItemButtonsView: View {
                             .font(.footnote)
                             .animation(.easeInOut, value: thread.likes)
                     }
-                }
+                }.padding(.bottom, 2)
             }
             
             Button {
@@ -39,6 +42,9 @@ struct ThreadItemButtonsView: View {
             } label: {
                 HStack {
                     Image(systemName: "bubble.right")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 16)
                     if thread.replies > 0 {
                         Text("\(thread.replies)")
                             .font(.footnote)
@@ -51,12 +57,20 @@ struct ThreadItemButtonsView: View {
                 
             } label: {
                 Image(systemName: "arrow.rectanglepath")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 17)
+                    .padding(.bottom, 2)
+                    
             }
             
             Button {
                 
             } label: {
                 Image(systemName: "paperplane")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 14)
             }
             
         }

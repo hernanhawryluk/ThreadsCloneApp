@@ -11,6 +11,7 @@ struct FeedDetailView: View {
     var thread: Thread
     
     @StateObject var viewModel = FeedDetailViewModel()
+    @State private var showReplySheet: Bool = false
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var userViewModel: CurrentUserProfileViewModel
@@ -24,30 +25,52 @@ struct FeedDetailView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    HStack(alignment: .top) {
-                        VStack {
-                            CircularProfileImageView(user: thread.user, size: .xSmall)
-                            
-                            Rectangle()
-                                .frame(maxWidth: 1, maxHeight: .infinity)
-                                .foregroundColor(.gray)
-                                .padding(.vertical, 2)
-                        }
-                        
-                        VStack(alignment: .leading, spacing: 5) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack {
+                            CircularProfileImageView(user: thread.user, size: .small)
                             Text(thread.user?.username ?? "")
                                 .fontWeight(.semibold)
-                            
-                            Text(thread.caption)
-                            
+                            Spacer()
+                            Text(thread.timestamp.timestampString())
+                                .font(.caption)
+                                .foregroundColor(Color(.systemGray))
                         }
-                        .font(.footnote)
-                        .foregroundColor(.primary)
+                        Text(thread.caption)
+                            .font(.footnote)
+                            .foregroundColor(.primary)
+                        ThreadItemButtonsView(thread: thread)
                     }
-                    .padding()
                     
+                    VStack(alignment: .leading, spacing: 16) {
+                        Divider()
+                        
+                        HStack {
+                            Text("Replies")
+                                .fontWeight(.semibold)
+                                .font(.subheadline)
+                            
+                            Spacer()
+                            
+                            Button {
+                                
+                            } label: {
+                                HStack {
+                                    Text("View activity")
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                    
+                                    Image(systemName: "chevron.forward")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 4)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                        }
+                        
+                        Divider()
+                    }
                     
-                    Divider()
                     
                     ForEach(viewModel.replies) { reply in
                         HStack(alignment: .top) {
@@ -70,21 +93,8 @@ struct FeedDetailView: View {
                             .font(.footnote)
                             .foregroundColor(.primary)
                         }
-                        .padding()
+                        .padding(.vertical, 4)
                     }
-                    .padding(.horizontal)
-                    
-                    HStack {
-                        
-                        CircularProfileImageView(user: currentUser, size: .xxSmall)
-                        
-                        Text("Add another reply")
-                            .fontWeight(.medium)
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                        
-                    }
-                    .padding(.horizontal, 24)
                 }
             }
             .onAppear {
@@ -99,15 +109,31 @@ struct FeedDetailView: View {
             .refreshable {
                 Task { try await viewModel.fetchReplies(threadId: thread.id) }
             }
-            .navigationTitle("Reply")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
                         dismiss()
                     } label: {
-                        Text("Cancel")
-                            .foregroundStyle(.primary)
+                        HStack {
+                            Image(systemName: "chevron.backward")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 8)
+                            Text("Back")
+                                .foregroundStyle(.primary)
+                        }
+                    }
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text("Thread")
+                            .font(.headline)
+                        Text("5k views")
+                            .font(.caption2)
+                            .foregroundColor(.gray)
                     }
                 }
                 
@@ -117,19 +143,45 @@ struct FeedDetailView: View {
                             dismiss()
                         }
                     } label: {
-                        Image(systemName: "ellipsis.circle")
+                        Image(systemName: "bell")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 17)
                             .foregroundColor(.primary)
+                            
                     }
                 }
             }
-            .padding(.horizontal)
+            .padding(.horizontal, 14)
             .padding(.bottom, 8)
+            .sheet(isPresented: $showReplySheet, content: {
+                FeedReplyView(thread: thread)
+            })
         }
+        
+        HStack {
+            CircularProfileImageView(user: userViewModel.currentUser, size: .xxSmall)
+            
+            Button {
+                showReplySheet.toggle()
+            } label: {
+                Text("Reply to \(thread.user?.username ?? "")...")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+            }
+            Spacer()
+        }
+        .padding(.horizontal)
+        .padding(.bottom, 16)
+
     }
 }
 
 struct FeedDetailView_Preview: PreviewProvider {
     static var previews: some View {
-        FeedDetailView(thread: dev.thread)
+        let userViewModel = CurrentUserProfileViewModel()
+        userViewModel.currentUser = User(id: "1", fullname: "John Doe", email: "john@example.com", username: "john_doe")
+        return FeedDetailView(thread: dev.thread)
+            .environmentObject(userViewModel)
     }
 }
